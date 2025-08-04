@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Contact Book </title>
+        
+    </head>
+    <body>
+        <h1> Contact Book</h1>
+        <a href = "{{ url_for('add_contact') }}"> Add New Contact</a>
+        <ul>
+            {% for contact in contacts %}
+                <li>
+                    <strong> {{contact.name }} </strong> - {{ contact.phone }} - {{ contact.email }}
+                </li> 
+            {% else %}
+            <li> No Contacts added yet.</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
